@@ -18,7 +18,10 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+        //return parent::index();
+        return $this->render('bundles/EasyAdminBundle/welcome.html.twig',[
+                            'user' => []
+        ]);
     }
 
     public function configureDashboard(): Dashboard
@@ -31,6 +34,6 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Magasins', 'fas fa-list', Magasin::class);
-        yield MenuItem::linkToCrud('Promotions', 'fas fa-list', Promotion::class);
+        yield MenuItem::linkToCrud('Promotions', 'fas fa-credit-card', Promotion::class);
     }
 }
