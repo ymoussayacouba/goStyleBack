@@ -20,7 +20,7 @@ class DashboardController extends AbstractDashboardController
     {
         //return parent::index();
         return $this->render('bundles/EasyAdminBundle/welcome.html.twig',[
-                            'user' => []
+                             'user' => []
         ]);
     }
 
